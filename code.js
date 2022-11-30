@@ -4,11 +4,25 @@ function helloWorld() {
 }
 
 function sayHello(input) {
-    if (typeof(input) === "string") {
-        return "Hello, " + input + "!";
-    } else if (input === true || input === false) {
+    if (input === "") {
+        return "Hello, World!";
+    } else if (typeof(input) === "string") {
+        if (isNaN(input)) {
+            return "Hello, " + input + "!";
+        } else {
+            return "Hello, World!";
+        }
+    } else if (typeof(input) === "boolean") {
+        return "Hello, World!";
+    } else if (input === undefined) {
+        return "Hello, World!";
+    } else if (input === null){
+        return "Hello, World!";
+    } else if (typeof(input) === "number"){
         return "Hello, World!";
     } else {
         return "Hello, World!";
     }
 }
+
+console.log(sayHello(""));
